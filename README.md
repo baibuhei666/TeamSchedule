@@ -133,8 +133,7 @@
 - 另外，可根据需要自行添加其他方法或重载构造器。  
 ### TeamService类的设计  
 - 功能：关于开发团队成员的管理：添加、删除等。  
-![TeamService](https://img.picui.cn/free/2025/01/07/677ce57de31c9.png)  
-![TeamService1](https://img.picui.cn/free/2025/01/07/677ce61f7cd55.png)  
+![TeamService](https://img.picui.cn/free/2025/01/07/677ce57de31c9.png)    
 - 说明：
   - counter为静态变量，用来为开发团队新增成员自动生成团队中的唯一ID，即memberId。（提示：应使用增1的方式）
   - MAX_MEMBER：表示开发团队最大成员数
