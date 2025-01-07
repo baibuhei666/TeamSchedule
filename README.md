@@ -132,4 +132,32 @@
 - 在service子包下提供自定义异常类：TeamException
 - 另外，可根据需要自行添加其他方法或重载构造器。  
 ### TeamService类的设计  
-- 功能：关于开发团队成员的管理：添加、删除等。
+- 功能：关于开发团队成员的管理：添加、删除等。  
+![TeamService](https://img.picui.cn/free/2025/01/07/677ce57de31c9.png)  
+![TeamService1](https://img.picui.cn/free/2025/01/07/677ce61f7cd55.png)  
+- 说明：
+  - counter为静态变量，用来为开发团队新增成员自动生成团队中的唯一ID，即memberId。（提示：应使用增1的方式）
+  - MAX_MEMBER：表示开发团队最大成员数
+  - team数组：用来保存当前团队中的各成员对象
+  - total：记录团队成员的实际人数
+  - getTeam()方法：返回当前团队的所有对象。返回：包含所有成员对象的数组，数组大小与成员人数一致。
+  - addMember(e: Employee)方法：向团队中添加成员。
+    - 参数：待添加成员的对象
+    - 异常：添加失败， TeamException中包含了失败原因  
+  - removeMember(memberId: int)方法：从团队中删除成员。
+    - 参数：待删除成员的memberId
+    - 异常：找不到指定memberId的员工，删除失败  
+  - 另外，可根据需要自行添加其他方法或重载构造器。  
+## 实现view包中类  
+1. 按照设计要求编写TeamView类，逐一实现各个方法，并编译。
+2. 执行main方法中，测试软件全部功能。  
+### TeamView类的设计  
+![TeamView](https://img.picui.cn/free/2025/01/07/677ce741a2cb7.png)  
+
+  - listSvc和teamSvc属性：供类中的方法使用。
+  - enterMainMenu ()方法：主界面显示及控制方法。
+  - 以下方法仅供enterMainMenu()方法调用：
+    - listAllEmployees ()方法：以表格形式列出公司所有成员
+    - getTeam()方法：显示团队成员列表操作
+    - addMember ()方法：实现添加成员操作
+    - deleteMember ()方法：实现删除成员操作
